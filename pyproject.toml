@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-web-search-time-limit"
+version = "1.0.0"
+description = "Time-filtered web search plugin for Hermes Agent — powered by DuckDuckGo (ddgs), no API key required."
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Morsy Cheikhrouhou"}
+]
+keywords = ["hermes", "hermes-agent", "web-search", "time-filter", "duckduckgo", "ddgs"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "ddgs>=9.0",
+]
+
+[project.entry-points."hermes.plugins"]
+hermes_web_search_time_limit = "hermes_web_search_time_limit.register:register"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hermes_web_search_time_limit*"]

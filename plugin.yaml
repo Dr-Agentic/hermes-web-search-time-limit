@@ -1,0 +1,7 @@
+name: hermes-web-search-time-limit
+version: 1.0.0
+description: "Time-filtered web search plugin for Hermes Agent — DuckDuckGo with time limits (past day/week/month/year), no API key required."
+author: Morsy Cheikhrouhou
+kind: backend
+provides_web_providers:
+  - hermes-web-search-time-limit

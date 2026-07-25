@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install ddgs
+          pip install -e .
+      - name: Smoke test — provider loads and is_available
+        run: |
+          python3 -c "
+            from hermes_web_search_time_limit.provider import DDGSWebSearchTimeLimitProvider
+            p = DDGSWebSearchTimeLimitProvider()
+            assert p.name == 'hermes-web-search-time-limit'
+            assert p.supports_search() == True
+            assert p.supports_extract() == False
+            print('Provider loaded OK')
+          "

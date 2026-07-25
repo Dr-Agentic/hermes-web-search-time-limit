@@ -1,5 +1,7 @@
 # hermes-web-search-time-limit
 
+**Live:** https://github.com/Dr-Agentic/hermes-web-search-time-limit
+
 Time-filtered web search plugin for [Hermes Agent](https://github.com/NousResearch/hermes-agent) — powered by DuckDuckGo, no API key required.
 
 ## What it does
